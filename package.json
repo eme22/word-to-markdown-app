@@ -46,7 +46,7 @@
   "author": "Ben Balter <ben@balter.com>",
   "license": "ISC",
   "dependencies": {
-    "@joplin/turndown": "^4.0.81",
+    "@joplin/turndown": "^4.0.85",
     "@joplin/turndown-plugin-gfm": "^1.0.63",
     "@tauri-apps/plugin-clipboard-manager": "^2.2.1",
     "@tauri-apps/plugin-dialog": "^2.7.1",

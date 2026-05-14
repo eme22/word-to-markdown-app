@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@joplin/turndown':
-        specifier: ^4.0.81
+        specifier: ^4.0.85
         version: 4.0.85
       '@joplin/turndown-plugin-gfm':
         specifier: ^1.0.63
