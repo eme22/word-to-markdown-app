@@ -63,7 +63,7 @@ importers:
         specifier: ^7.0.1
         version: 7.1.0
       prettier:
-        specifier: ~3.8
+        specifier: ~3.8.3
         version: 3.8.3
       rehype-sanitize:
         specifier: ^6.0.0
