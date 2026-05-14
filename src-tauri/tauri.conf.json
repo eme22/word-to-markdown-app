@@ -1,0 +1,51 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "WordToMarkdown",
+  "version": "0.1.0",
+  "identifier": "com.wordtomarkdown.app",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run server:web",
+    "beforeBuildCommand": "npm run build:web"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Word to Markdown",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "fullscreen": false
+      },
+      {
+        "label": "bulk",
+        "title": "Bulk Convert",
+        "width": 600,
+        "height": 500,
+        "resizable": true,
+        "fullscreen": false,
+        "url": "bulk.html",
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "android": {
+      "debugApplicationIdSuffix": ".debug"
+    }
+  }
+}

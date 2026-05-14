@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Word to Markdown</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script type="module" src="/src/index.ts"></script>
+  </head>
+  <body>
+    <div class="container text-center mt-2">
+      <h1>Word to Markdown</h1>
+      <div id="input">
+        <div class="row mt-3">
+          <div class="col">
+            <h3>Step 1</h3>
+            <h4>Upload a <code>.docx</code> file</h4>
+            <p class="text-muted">Drag-and-drop the file below to upload.</p>
+            <p class="text-muted">
+              Google doc? File → Download as → <code>.docx</code>.
+            </p>
+          </div>
+          <div class="col">
+            <h3>Step 2</h3>
+            <h4>Get back crisp, clean Markdown</h4>
+            <pre class="bg-light border p-2 mt-3 text-start"><code># H1
+
+Paragraph
+
+## H2
+
+Paragraph
+
+### H3
+
+Paragraph
+        </code></pre>
+          </div>
+
+          <div class="col">
+            <h3>Step 3</h3>
+            <h4>???</h4>
+          </div>
+        </div>
+        <div class="row">
+          <form>
+            <div class="form-group">
+              <input
+                type="file"
+                id="file"
+                accept=".docx"
+                class="form-control-file p-2 border"
+              />
+              <button type="button" id="submit-button" class="btn btn-primary btn-lg" disabled>
+                Submit
+              </button>
+            </div>
+            <div class="mt-4">
+              <button id="open-bulk" type="button" class="btn btn-outline-secondary">
+                Bulk Convert
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="loading" class="d-none my-5">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <h3 class="mt-3">Converting your document...</h3>
+        <p class="text-muted">This may take a few seconds for larger files.</p>
+      </div>
+
+      <div id="results" class="d-none">
+        <h2>Results of converting <span id="filename"></span></h2>
+
+        <div class="moar gap-3">
+          <button id="copy-button" type="button" class="btn btn-primary">
+            Copy to clipboard
+          </button>
+          <button
+            id="restart-button"
+            type="button"
+            class="btn btn-outline-secondary"
+          >
+            Convert another file
+          </button>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-6">
+            <h3>Markdown</h3>
+            <pre
+              class="bg-light border text-start p-2 pre-scrollable"
+            ><code id="output"></code></pre>
+          </div>
+          <div class="col-6">
+            <h3>Rendered</h3>
+            <div
+              id="rendered"
+              class="bg-light border text-start pre-scrollable py-1 px-2"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <nav class="nav justify-content-center mt-2">
+        <a
+          href="https://github.com/benbalter/word-to-markdown-js/blob/master/CONTRIBUTING.md"
+          class="nav-link"
+          >Feedback</a
+        >
+
+        <a
+          href="https://github.com/benbalter/word-to-markdown-js"
+          class="nav-link"
+          >Source</a
+        >
+
+        <a href="https://www.patreon.com/benbalter" class="nav-link">Donate</a>
+
+        <a href="./terms/" class="nav-link">Terms</a>
+
+        <a href="./privacy/" class="nav-link">Privacy</a>
+
+        <a href="https://ben.balter.com" class="nav-link">@benbalter</a>
+      </nav>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="copyToast"
+        class="toast align-items-center text-white bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Markdown copied to clipboard!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
